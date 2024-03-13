@@ -7,8 +7,8 @@ const Footer = () => {
             <a className="flex flex-row items-center gap-1 font-bold hover:underline" target="_blank" href="https://facebook.com"><img className="w-6 h-6" src="/public/facebook.png" alt="" />Facebook</a>
             </div>
             <div className="flex flex-col m-2">
-            <a className="flex flex-row items-center gap-1 font-bold hover:underline" href=""><img className="w-6 h-6" src="/public/whatsapp.png" alt="" />WhatsApp</a>
-            <a className="flex flex-row items-center gap-2 font-bold hover:underline" target="_blank" href=""><img className="w-5 h-5" src="/public/telegram.png" alt="" />Telegram</a>
+            <a className="flex flex-row items-center gap-1 font-bold hover:underline" target="_blank" href="https://whatsapp.com"><img className="w-6 h-6" src="/public/whatsapp.png" alt="" />WhatsApp</a>
+            <a className="flex flex-row items-center gap-2 font-bold hover:underline" target="_blank" href="https://web.telegram.org/"><img className="w-5 h-5" src="/public/telegram.png" alt="" />Telegram</a>
             <a className="flex flex-row items-center gap-2 font-bold hover:underline" target="_blank" href="https://hotmail.com"><img className="w-5 h-5" src="/public/mail.png" alt="" />Hotmail</a>
             </div>
             </footer>
