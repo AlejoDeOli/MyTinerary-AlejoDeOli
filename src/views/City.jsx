@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 const City = () => {
     const params = useParams();
     const [city, setCity] = useState({})
-    const [charging, setCharging] = useState(true)
+    const [loading, setLoading] = useState(true)
     const navigate = useNavigate()
     useEffect( () => {
         getACities(params.id).then( (res) => {
@@ -16,15 +16,15 @@ const City = () => {
                 navigate("/Cities")
             }
         })
-        .finally(() => setCharging(false))
+        .finally(() => setLoading(false))
     }, [])
     
-    if(charging){
+    if(loading){
         return(
             <>
             <main className='grow flex flex-col gap-5 justify-center items-center bg-slate-600'>
                 <div>
-                    <h1 className='font-semibold text-2xl'>Charging...</h1>
+                    <h1 className='font-semibold text-2xl'>Loading...</h1>
                 </div>
             </main>
             </>
