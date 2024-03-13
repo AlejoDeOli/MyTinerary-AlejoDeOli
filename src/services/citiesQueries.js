@@ -8,3 +8,14 @@ export const getCities = async () =>{
         return []
     }
 }
+
+
+
+export const getACities = async (_id) => {
+   try {
+        const result = await axios(`http://localhost:4000/api/cities/` + _id)
+        return result.data.data
+   } catch (error) {
+        return {error}
+   }
+}
