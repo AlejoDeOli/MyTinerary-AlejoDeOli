@@ -16,7 +16,7 @@ const Header = () => {
       <h1 className="m-5 text-sm sm:text-4xl font-semibold font-['Open_Sans'] flex items-center flex-row">MyTinerary</h1>
       <nav className="flex items-center gap-3 sm:gap-10 m-5">
         {links.map((link) => ( 
-          <Link  key={link.title} className={`text-md sm:text-2xl font-medium ${link.active ? "border-b-4 border-solid" : ""}`} to={link.path}>{link.title}</Link>
+          <Link  key={link.title} className={`text-md hover:scale-95 sm:text-2xl font-medium ${link.active ? "border-b-4 border-solid" : ""}`} to={link.path}>{link.title}</Link>
         ))}
         <img className="flex w-8 h-8 sm:w-12 sm:h-12" src="/public/perfil4.png" alt="" />
       </nav>

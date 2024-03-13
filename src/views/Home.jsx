@@ -21,7 +21,7 @@ const Home = () => {
       <Hero />
       <main className="grow bg-[#176A73]">
         
-        {!(cities.length > 0) ? <h2>loading</h2> : <Carrousel citys={citiesSelected} />}
+        {!(cities.length > 0) ? <h2 className="text-center text-2xl font-medium text-slate-200 mt-10">Loading...</h2> : <Carrousel citys={citiesSelected} />}
       </main>
     </>
   );
