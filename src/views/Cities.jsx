@@ -40,7 +40,7 @@ export const Cities = () => {
         </search>
         {filters.length > 0 && 
         filters.map((city) => (
-          <CardsCities key={city.id} cities={city} />
+          <CardsCities key={city._id} cities={city} />
         ))}
     </div>
     </main>
