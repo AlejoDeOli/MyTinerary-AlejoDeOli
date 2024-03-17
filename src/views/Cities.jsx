@@ -1,27 +1,31 @@
 import { useState, useEffect, useRef } from "react";
 import { getCities } from "../services/citiesQueries"
 import CardsCities from "../components/CardsCities"
+import { useSelector, useDispatch } from "react-redux";
+import { filterByName, loadCities } from "../redux/action/citiesActions";
 
 export const Cities = () => {
-  const [cities, setCities] = useState([]);
-  const [filters, setFilters] = useState([])
+
   const inputSerch = useRef(null)
 
 
+  const dispatch = useDispatch()
+
+
+  const {allCities, filtered, search} = useSelector( (store) => store.cities)
+
+
     useEffect(() =>{
+      if(allCities.length == 0){
       getCities().then( (data) => {
-        setCities(data)
-        setFilters(data)
-      })
+        dispatch(loadCities(data))
+      })}
     }, []);
 
+
     const handleInput = () =>{
-      const filter = filterByName(cities, inputSerch.current.value)
-      setFilters(filter)
+      dispatch(filterByName(inputSerch.current.value))
     }
-    
-    const filterByName = (list, value) => list.filter((city) => 
-    city.name.toLowerCase().startsWith( value.toLowerCase().trim() ))
     
   
   return (
@@ -36,10 +40,11 @@ export const Cities = () => {
           name="Name_city"
           onInput={handleInput}
           ref={inputSerch}
+          defaultValue={search}
           />
         </search>
-        {filters.length > 0 && 
-        filters.map((city) => (
+        {filtered.length > 0 && 
+        filtered.map((city) => (
           <CardsCities key={city._id} cities={city} />
         ))}
     </div>
