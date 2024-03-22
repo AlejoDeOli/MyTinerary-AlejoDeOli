@@ -77,8 +77,8 @@ function SignUp() {
             name="password"
             className="w-9/12 h-8 p-2 outline-double ps-4"
           />
-          <select className=" w-9/12 h-8 outline-double ps-4" name="country">
-            <option value="" selected disabled>Select Country</option>
+          <select defaultValue="Select Country" className=" w-9/12 h-8 outline-double ps-4" name="country">
+            <option value="Select Country"  disabled>Select Country</option>
             {countries.length > 0 && countries.map( (country) => (<option key={country} value={country}>{country}</option>)) }
           </select>
           <input
